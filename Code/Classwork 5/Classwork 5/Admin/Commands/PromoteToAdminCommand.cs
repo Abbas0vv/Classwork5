@@ -18,7 +18,7 @@ namespace TaskManagement.Admin.Commands
 
             string email = Console.ReadLine()!;
 
-            if (!validator.IsEmailExists(email))
+            if (validator.IsEmailExists(email))
             {
                 foreach (User user in DataContext.Users)
                 {

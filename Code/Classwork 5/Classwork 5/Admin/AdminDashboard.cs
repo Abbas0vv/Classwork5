@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Classwork_5.Admin.Commands;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,9 @@ namespace TaskManagement.Admin
 
                 switch (command)
                 {
+                    case "/sent-messages":
+                        SentMessagesCommand.Handle();
+                        break;
                     case "/show-users":
                         ShowUsersCommand.Handle();
                         break;

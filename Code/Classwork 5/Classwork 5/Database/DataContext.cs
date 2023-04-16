@@ -1,10 +1,12 @@
-﻿using TaskManagement.Database.Models;
+﻿using Classwork_5.Database.Models;
+using TaskManagement.Database.Models;
 
 namespace TaskManagement.Database
 {
     public class DataContext
     {
         public static List<User> Users { get; set; } = new List<User>();
+        public static List<Message> Messages { get; set; } = new List<Message>();
 
         static DataContext()
         {

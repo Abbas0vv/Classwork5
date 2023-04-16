@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Classwork_5.Client.Commands;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,6 +21,9 @@ namespace TaskManagement.Client
 
                 switch (command)
                 {
+                    case "/sent-messages":
+                        SentMessagesCommandForUser.Handle();
+                        break;
                     case "/update-settings":
                         UpdateSettingsCommandForUsers.Handle();
                         break;

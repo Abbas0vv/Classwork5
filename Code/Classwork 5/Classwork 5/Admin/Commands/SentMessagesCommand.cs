@@ -6,16 +6,16 @@ using System.Threading.Tasks;
 using TaskManagement.Common;
 using TaskManagement.Database;
 using TaskManagement.Database.Models;
-using TaskManagement.Utilities;
 
-namespace TaskManagement.Admin.Commands
+namespace Classwork_5.Admin.Commands
 {
-    public class DepromoteToAdminCommand
+    public class SentMessagesCommand
     {
         public static void Handle()
         {
             UserValidator validator = new UserValidator();
 
+            Console.Write("Who will it be sent to : ");
             string email = Console.ReadLine()!;
 
             if (validator.IsEmailExists(email))
@@ -24,21 +24,12 @@ namespace TaskManagement.Admin.Commands
                 {
                     if (user.Email == email)
                     {
-                        if (user.IsAdmin)
-                        {
-                            user.IsAdmin = false;
-                            Console.WriteLine($"{user.Name} is now user!");
-                            return;
-                        }
-                        else
-                        {
-                            Console.WriteLine($"{user.Name} already user!");
-                            return;
-                        }
+                        Console.WriteLine("Write your message : ");
+                        string message = Console.ReadLine()!;
+                        user.Messages.Add(message);
                     }
                 }
             }
-            Console.WriteLine("Email can not be found!");
         }
     }
 }
