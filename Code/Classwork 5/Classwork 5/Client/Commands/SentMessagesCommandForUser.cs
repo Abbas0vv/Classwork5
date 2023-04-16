@@ -18,8 +18,10 @@ namespace Classwork_5.Client.Commands
             Console.Write("Who will it be sent to : ");
             string email = Console.ReadLine()!;
 
+
             if (validator.IsEmailExists(email))
             {
+
                 foreach (User human in DataContext.Users)
                 {
                     if (human.Email == email)
@@ -30,7 +32,9 @@ namespace Classwork_5.Client.Commands
                         human.Sender = $"{user.Name} {user.LastName} ({user.Email})";
                     }
                 }
+
             }
+
         }
     }
 }
