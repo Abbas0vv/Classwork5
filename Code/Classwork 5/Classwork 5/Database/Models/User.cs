@@ -11,9 +11,10 @@
         public string Email { get; set; }
         public bool IsAdmin { get; set; }
         public bool IsBanned { get; set; }
+        public string Sender { get; set; }
         public List<string> Messages { get; set; }
 
-        public User(string name, string lastName, string password, string email, bool isAdmin = false, bool isBanned = false, List<string> messages = null)
+        public User(string name, string lastName, string password, string email, bool isAdmin = false, bool isBanned = false, List<string> messages = null, string sender = null)
         {
             Id = ++IdCounter;
             Name = name;
@@ -23,6 +24,7 @@
             IsAdmin = isAdmin;
             IsBanned = isBanned;
             Messages = messages ?? new List<string>();
+            Sender = sender;
         }
 
         public string GetShortInfo()

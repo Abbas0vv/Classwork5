@@ -14,7 +14,7 @@ namespace Classwork_5.Client.Commands
             int order = 1;
 
             foreach (string message in user.Messages)
-            {   
+            {
                 Console.WriteLine($"{order}. From {user.Sender} Message : ");
                 Console.WriteLine(message);
                 order++;

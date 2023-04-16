@@ -22,13 +22,16 @@ namespace TaskManagement.Client
                 switch (command)
                 {
                     case "/sent-messages":
-                        SentMessagesCommandForUser.Handle();
+                        SentMessagesCommandForUser.Handle(user);
                         break;
                     case "/update-settings":
-                        UpdateSettingsCommandForUsers.Handle();
+                        UpdateSettingsCommandForUsers.Handle(user);
+                        break;
+                    case "/show-messages":
+                        ShowMessagesCommand.Handle(user);
                         break;
                     case "/close-account":
-                        RemoveUserCommandForUsers.Handle();
+                        RemoveUserCommandForUsers.Handle(user);
                         break;
                     case "/logout":
                         Console.WriteLine("Bye-bye");

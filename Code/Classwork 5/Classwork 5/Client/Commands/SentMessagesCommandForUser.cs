@@ -11,7 +11,7 @@ namespace Classwork_5.Client.Commands
 {
     public class SentMessagesCommandForUser
     {
-        public static void Handle()
+        public static void Handle(User user)
         {
             UserValidator validator = new UserValidator();
 
@@ -20,13 +20,14 @@ namespace Classwork_5.Client.Commands
 
             if (validator.IsEmailExists(email))
             {
-                foreach (User user in DataContext.Users)
+                foreach (User human in DataContext.Users)
                 {
-                    if (user.Email == email)
+                    if (human.Email == email)
                     {
                         Console.WriteLine("Write your message : ");
                         string message = Console.ReadLine()!;
-                        user.Messages.Add(message);
+                        human.Messages.Add(message);
+                        human.Sender = $"{user.Name} {user.LastName} ({user.Email})";
                     }
                 }
             }
